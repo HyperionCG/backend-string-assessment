@@ -24,7 +24,15 @@ Kenzie Assignment: String2
 
 def verbing(s):
     # your code here
-    return
+    string = ''
+    if len(s) > 2:
+        if s.endswith('ing'):
+            string += s+'ly'
+        else:
+            string += s+'ing'
+    else:
+            string += s
+    return string
 
 
 # E. not_bad
@@ -37,7 +45,15 @@ def verbing(s):
 # This dinner is good!
 def not_bad(s):
     # your code here
-    return
+    result = ''
+    if s.find('not') < s.find('bad'):
+        if s[-1].isalpha():
+            result += s.replace(s[s.find('not'):], 'good')
+        else:
+            result += s.replace(s[s.find('not'):], 'good') + s[-1]
+    else:
+        result += s
+    return result
 
 
 # F. front_back
@@ -49,7 +65,18 @@ def not_bad(s):
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
     # your code here
-    return
+    result = ''
+    if len(a) % 2 == 0:
+        if len(b) % 2 == 0:
+            result += a[:int(len(a)/2)] + b[:int(len(b)/2)] + a[int(len(a)/2):] + b[int(len(b)/2):]
+        else:
+            result += a[:int(len(a)/2)] + b[:int((len(b)/2)+1)] + a[int(len(a)/2):] + b[int((len(b)/2)+1):]
+    else:
+        if len(b) % 2 == 0:
+            result += a[:int((len(a)/2)+1)] + b[:int(len(b)/2)] + a[int((len(a)/2)+1):] + b[int(len(b)/2):]
+        else:
+            result += a[:int((len(a)/2)+1)] + b[:int((len(b)/2)+1)] + a[int((len(a)/2)+1):] + b[int((len(b)/2)+1):]
+    return result
 
 
 # Provided simple test() function used in main() to print
