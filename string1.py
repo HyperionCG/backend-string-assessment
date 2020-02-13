@@ -27,7 +27,12 @@ Kenzie assignment: String1
 
 def donuts(count):
     # your code here
-    return
+    donuts = 'Number of donuts: '
+    if count < 10:
+        donuts += str(count)
+    else:
+        donuts += 'many'
+    return donuts
 
 
 # B. both_ends
@@ -37,7 +42,10 @@ def donuts(count):
 # is less than 2, return instead the empty string.
 def both_ends(s):
     # your code here
-    return
+    strings = ''
+    if len(s) >= 2:
+        strings = s[:2] + s[-2:]
+    return strings
 
 
 # C. fix_start
@@ -51,7 +59,8 @@ def both_ends(s):
 # where all instances of stra have been replaced by strb.
 def fix_start(s):
     # your code here
-    return
+    string = s[1:].replace(s[0], '*')
+    return s[0]+string
 
 
 # D. MixUp
@@ -63,7 +72,8 @@ def fix_start(s):
 # Assume a and b are length 2 or more.
 def mix_up(a, b):
     # your code here
-    return
+    result = b[:2] + a[2:] + ' ' + a[:2] + b[2:]
+    return result
 
 
 # Provided simple test() function used in main() to print
